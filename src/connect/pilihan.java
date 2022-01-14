@@ -11,6 +11,7 @@ import java.util.Scanner;
 public class pilihan {
     // created object
     penghuni p = new penghuni();    
+    transaksi t = new transaksi();
     
     public void menu() throws IOException, SQLException, ClassNotFoundException {
         // create object
@@ -97,6 +98,12 @@ public class pilihan {
                     p.hapusPenghuni();
                     break;
                 }
+                    }
+                    break;
+                }
+                }
+                break;
+            }
                 
                 /*
                 case 0:{
@@ -107,12 +114,12 @@ public class pilihan {
                 }
                     break;
         }
-        }
-  /*          case 2:{
+        } */
+            case 2:{
                 System.out.println("======================================");
-                System.out.println("             Data Barang              ");
+                System.out.println("             Transaksi Kost              ");
                 System.out.println("======================================");
-                System.out.println("1. Tambah Barang");
+                System.out.println("1. Tambah Data Transaksi ");
                 System.out.println("2. Update Barang");
                 System.out.println("3. Tampil Barang");
                 System.out.println("4. Cari Barang");
@@ -120,14 +127,18 @@ public class pilihan {
                 System.out.println("0. Keluar");
                 System.out.println("=====================================");
                 System.out.print("Pilihan = ");
-                int pilih2 = input.nextInt();
+                int pilihan2 = sc.nextInt();
                 System.out.println("=====================================");
-                switch (pilih2) {
+                switch (pilihan2) {
+                   case 0:{
+                    System.exit(0);
+                break;
+                    }    
                 case 1:{
-                    brg.tambah();
+                    t.bayar_kost();
                 break;
                     }
-                case 2:{
+              /*  case 2:{
                     brg.update();
                 break;
                     }
@@ -143,14 +154,11 @@ public class pilihan {
                     brg.hapus();
                 break;
                     }
-                case 0:{
-                    System.exit(0);
-                break;
-                    }
+                */
                   }
+                break;
                 }
-                    break;
-            case 3:{
+       /*     case 3:{
                 System.out.println("======================================");
                 System.out.println("             Data Keuangan            ");
                 System.out.println("======================================");
@@ -196,8 +204,9 @@ public class pilihan {
                 System.exit(0);
             }
                 break;
-        } */}}}}        
-        }
+*/
+
+    }
         System.out.println("=====================================");
         System.out.print("Apakah anda ingin mengulang (y/n)? ");
         ulangi = sc.next();
@@ -205,6 +214,6 @@ public class pilihan {
             System.exit(0);
         }
     }
-    }
+}
 }
         
