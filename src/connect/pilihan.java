@@ -93,6 +93,8 @@ public class pilihan {
                        p.cariPenghuniNama();
                        break;
                    }
+                }
+                }
                 case 5:
                 {
                     p.hapusPenghuni();
@@ -101,9 +103,8 @@ public class pilihan {
                     }
                     break;
                 }
-                }
-                break;
-            }
+                
+            
                 
                 /*
                 case 0:{
