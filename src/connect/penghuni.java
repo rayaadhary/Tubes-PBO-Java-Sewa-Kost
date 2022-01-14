@@ -23,6 +23,7 @@ public class penghuni {
     Connection con;
     Statement s;
     ResultSet rs;
+    private int ip;
     
     
 // tambah penghuni    
@@ -44,10 +45,21 @@ public void tambahPenghuni() throws IOException, SQLException, ClassNotFoundExce
             System.out.println("Ekonomi  = \"Rp.1000000\" , 1   - 10");
             System.out.println("Standar   = \"Rp.2000000\",  11  - 20");
             System.out.println("Atas        = \"Rp.3000000\",   21  - 30");
-              // input dari user
+            
+            // input dari user  
             System.out.print("Masukan Kode Kamar  : ");
-            String ip = sc.next().trim();
-            pstmt.setString(1, ip);
+            int ip = sc.nextInt();
+            
+            if (ip > 0 && ip < 31){
+                this.ip = ip;
+            }
+            else {
+                System.out.println("Kode Kamar tidak ada!");
+                s.close();
+                con.close();
+            }
+            
+            pstmt.setInt(1, ip);
             
             System.out.print("Masukan Nama Penghuni Kost : ");
             String namap = br.readLine().trim();

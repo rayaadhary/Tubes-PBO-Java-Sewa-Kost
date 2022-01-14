@@ -94,6 +94,7 @@ public class pilihan {
                        break;
                    }
                 }
+                    break;
                 }
                 case 5:
                 {
@@ -120,9 +121,9 @@ public class pilihan {
                 System.out.println("======================================");
                 System.out.println("             Transaksi Kost              ");
                 System.out.println("======================================");
-                System.out.println("1. Tambah Data Transaksi ");
-                System.out.println("2. Update Barang");
-                System.out.println("3. Tampil Barang");
+                System.out.println("1. Transaksi Sewa Kost ");
+                System.out.println("2. Tampil Data Transaksi");
+                System.out.println("3. Tampil Fasilitas Kamar Kost");
                 System.out.println("4. Cari Barang");
                 System.out.println("5. Hapus Barang");
                 System.out.println("0. Keluar");
@@ -136,17 +137,17 @@ public class pilihan {
                 break;
                     }    
                 case 1:{
-                    t.bayar_kost();
+                    t.transaksi_kost();
                 break;
                     }
-              /*  case 2:{
-                    brg.update();
+                case 2:{
+                    t.tampilTransaksi();
                 break;
-                    }
+                    } 
                 case 3:{
-                    brg.tampil();
+                    t.fasilitas_kost();
                 break;
-                    }
+                    }/*
                 case 4:{
                     brg.cari();
                 break;
