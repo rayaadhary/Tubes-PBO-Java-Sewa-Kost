@@ -114,6 +114,7 @@ public class pilihan {
                 System.out.println("2. Tampil Data Transaksi");
                 System.out.println("3. Cari Transaksi Kost");
                 System.out.println("4. Ubah Transaksi Kost");
+                System.out.println("5. Hapus Transaksi Kost");
                 System.out.println("0. Keluar");
                 System.out.println("=====================================");
                 System.out.print("Pilihan = ");
@@ -161,6 +162,10 @@ public class pilihan {
                   }
                 case 4:{
                     t.ubahTransaksi();
+                    break;
+                }
+                case 5:{
+                    t.hapusTransaksi();
                     break;
                 }
                 }

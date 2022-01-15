@@ -53,7 +53,7 @@ public class transaksi {
      
         String jkamar = null;
         int hbulan = 0;
-        
+   
         if (ip > 0 && ip <= 10 )
         {
             jkamar = "Ekonomi";
@@ -360,5 +360,43 @@ public void ubahTransaksi() throws IOException
             System.out.println("JDBC Driver tidak ditemukan");
         }
     }
+  
+  // hapus transaksi 
+ public void hapusTransaksi() throws IOException, ClassNotFoundException{
+    
+        try {
+        //koneksi
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        String urlValue = "jdbc:mysql://"+host+"/"+db+"?user="+user+"&password="+pwd;
+        con = DriverManager.getConnection(urlValue);
+        s = con.createStatement();
+            
+            
+        // ambil input dari user
+        System.out.print("Nomor Kamar yang mau dihapus =  ");
+      
+        String ip = sc.next().trim();
+        
+        // buat query hapus
+        String sql = String.format("DELETE FROM t_transaksi WHERE no_kamar='%s'",ip);
+       
+        // hapus data
+        s.execute(sql);
+        
+        System.out.println("Data telah terhapus...");
+        
+        //Close Statement dan Conn
+        con.close();
+        s.close();
+    } 
+  catch(SQLException e)
+  {
+            System.out.println("Koneksi Gagal "+e.toString());
+   }
+   catch (ClassNotFoundException e)
+        {
+            System.out.println("JDBC Driver tidak ditemukan");
+        }
+} 
 } 
 
