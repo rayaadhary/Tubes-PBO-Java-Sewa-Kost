@@ -40,9 +40,9 @@ public class kamar {
         rs = s.executeQuery(sql);
        
          
-            System.out.println("+---------------------------------------------------------------+");
-            System.out.println("|\t\t\tDATA KETERANGAN KOST\t\t\t|");
-            System.out.println("+---------------------------------------------------------------+");
+            System.out.println("************************************************************************");
+            System.out.println("\t\t\tData Keterangan Kamar Kost\t\t\t");
+            System.out.println("************************************************************************");
 
             while (rs.next()) {
                 

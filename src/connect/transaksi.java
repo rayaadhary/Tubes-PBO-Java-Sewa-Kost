@@ -33,6 +33,10 @@ public class transaksi {
         con  = DriverManager.getConnection(urlValue);
         s = con.createStatement();
         
+        System.out.println("**************************************");
+        System.out.println("\tTambah Data Transaksi\t");
+        System.out.println("**************************************");
+        
         //User memasukan data untuk transaksi untuk lama sewa
         System.out.print("Masukkan Nomor Kamar = ");
         int ip = sc.nextInt();
@@ -119,9 +123,9 @@ public class transaksi {
         rs = s.executeQuery(sql);
        
          
-            System.out.println("+----------------------------------------------------+");
-            System.out.println("|\t\t\tDATA TRANSAKSI KOST\t\t\t|");
-            System.out.println("+----------------------------------------------------+");
+            System.out.println("************************************************************************");
+            System.out.println("\t\t\tTampil Transaksi Kost\t\t\t");
+            System.out.println("************************************************************************");
 
             while (rs.next()) {
                 
@@ -164,6 +168,10 @@ public void ubahTransaksi() throws IOException
         con = DriverManager.getConnection(urlValue);
         s = con.createStatement();
         
+         System.out.println("**************************************");
+         System.out.println("\tUbah Data Transaksi\t");
+         System.out.println("**************************************");
+        
         // memasukkan nomor kamar yang akan diubah lama sewanya
         System.out.print("Masukkan Nomor Kamar yang Ingin diubah = ");
         String ip_baru = sc.next();
@@ -183,22 +191,22 @@ public void ubahTransaksi() throws IOException
         int lama = rs.getInt("lama_sewa");
         int hbulan = rs.getInt("harga_bulan");
         int tot = rs.getInt("total");
-        System.out.println("+----------------------------------------------------+");
-        System.out.println("       Data Transaksi yang akan diubah     ");
-        System.out.println("+----------------------------------------------------+");
-        System.out.println("Id Transaksi = "+id);
-        System.out.println("Nomor Kamar = " +ip);
-        System.out.println("Jenis Kamar = "+jkamar);
-        System.out.println("Nama Penghuni  = " +namap);
-        System.out.println("Tanggal Transaksi = " +tanggal);
-        System.out.println("Lama Sewa = " +lama);
-        System.out.println("Harga Bulan = "+hbulan);
-        System.out.println("Total = "+tot);
+        System.out.println("**************************************");
+        System.out.println("\tData Transaksi yang akan diubah\t");
+        System.out.println("**************************************");
+        System.out.println("Id Transaksi\t= "+id);
+        System.out.println("Nomor Kamar\t= " +ip);
+        System.out.println("Jenis Kamar\t= "+jkamar);
+        System.out.println("Nama Penghuni\t= " +namap);
+        System.out.println("Tanggal Transaksi\t= " +tanggal);
+        System.out.println("Lama Sewa\t= " +lama);
+        System.out.println("Harga Bulan\t= "+hbulan);
+        System.out.println("Total\t\t= "+tot);
         
         //Memasukkan data sewa yang diubah
-        System.out.println("+----------------------------------------------------+");
-        System.out.println("         Masukkan Transaksi baru         ");
-        System.out.println("+----------------------------------------------------+");
+        System.out.println("**************************************");
+        System.out.println("\tMasukkan Transaksi baru\t");
+        System.out.println("**************************************");
         
         System.out.print("Tanggal Transaksi (T-B-H) = ");
         String tanggal_baru = sc.next();
@@ -263,17 +271,17 @@ public void ubahTransaksi() throws IOException
             int lama = rs.getInt("lama_sewa");
             int hbulan = rs.getInt("harga_bulan");
             int tot = rs.getInt("total");
-            System.out.println("====================================");
-            System.out.println("       Data Transaksi yang Dicari     ");
-            System.out.println("====================================");
-            System.out.println("Id Transaksi = "+id);
-            System.out.println("Nomor Kamar = " +ip);
-            System.out.println("Jenis Kamar = "+jkamar);
-            System.out.println("Nama Penghuni  = " +namap);
-            System.out.println("Tanggal Transaksi = " +tanggal);
-            System.out.println("Lama Sewa = " +lama);
-            System.out.println("Harga Bulan = "+hbulan);
-            System.out.println("Total = "+tot);
+            System.out.println("**************************************");
+            System.out.println("\tData Transaksi yang Dicari\t");
+            System.out.println("**************************************");
+            System.out.println("Id Transaksi\t= "+id);
+            System.out.println("Nomor Kamar\t= " +ip);
+            System.out.println("Jenis Kamar\t= "+jkamar);
+            System.out.println("Nama Penghuni\t= " +namap);
+            System.out.println("Tanggal Transaksi\t= " +tanggal);
+            System.out.println("Lama Sewa\t= " +lama);
+            System.out.println("Harga Bulan\t= "+hbulan);
+            System.out.println("Total\t\t= "+tot);
         }
         else
         {
@@ -328,17 +336,17 @@ public void ubahTransaksi() throws IOException
             int lama = rs.getInt("lama_sewa");
             int hbulan = rs.getInt("harga_bulan");
             int tot = rs.getInt("total");
-            System.out.println("====================================");
-            System.out.println("       Data Transaksi yang Dicari     ");
-            System.out.println("====================================");
-            System.out.println("Id Transaksi = "+id);
-            System.out.println("Nomor Kamar = " +ip);
-            System.out.println("Jenis Kamar = "+jkamar);
-            System.out.println("Nama Penghuni  = " +namap);
-            System.out.println("Tanggal Transaksi = " +tanggal);
-            System.out.println("Lama Sewa = " +lama);
-            System.out.println("Harga Bulan = "+hbulan);
-            System.out.println("Total = "+tot);
+            System.out.println("**************************************");
+            System.out.println("\tData Transaksi yang Dicari\t");
+            System.out.println("**************************************");
+            System.out.println("Id Transaksi\t= "+id);
+            System.out.println("Nomor Kamar\t= " +ip);
+            System.out.println("Jenis Kamar\t= "+jkamar);
+            System.out.println("Nama Penghuni\t= " +namap);
+            System.out.println("Tanggal Transaksi\t= " +tanggal);
+            System.out.println("Lama Sewa\t= " +lama);
+            System.out.println("Harga Bulan\t= "+hbulan);
+            System.out.println("Total\t\t= "+tot);
         }
         else
         {
@@ -371,7 +379,11 @@ public void ubahTransaksi() throws IOException
         con = DriverManager.getConnection(urlValue);
         s = con.createStatement();
             
-            
+         System.out.println("**************************************");
+         System.out.println("\tHapus Data Transaksi \t");
+         System.out.println("**************************************");
+        
+        
         // ambil input dari user
         System.out.print("Nomor Kamar yang mau dihapus =  ");
       

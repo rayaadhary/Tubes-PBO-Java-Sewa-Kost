@@ -41,10 +41,14 @@ public void tambahPenghuni() throws IOException, SQLException, ClassNotFoundExce
             PreparedStatement pstmt = null;
             pstmt = con.prepareStatement(sql);
             
+            System.out.println("**************************************");
+            System.out.println("\tTambah Data Penghuni\t");
+            System.out.println("**************************************");
+            
             System.out.println("Harga yang tertera sesuai range kode kamar");
-            System.out.println("Ekonomi  = \"Rp.1000000\" , 1   - 10");
-            System.out.println("Standar   = \"Rp.2000000\",  11  - 20");
-            System.out.println("Atas        = \"Rp.3000000\",   21  - 30");
+            System.out.println("Ekonomi\t=\tRp.1000000\t1 - 10");
+            System.out.println("Standar\t=\tRp.2000000\t11 - 20");
+            System.out.println("Atas\t=\tRp.3000000\t21- 30");
             
             // input dari user  
             System.out.print("Masukan Kode Kamar  : ");
@@ -61,15 +65,15 @@ public void tambahPenghuni() throws IOException, SQLException, ClassNotFoundExce
             
             pstmt.setInt(1, ip);
             
-            System.out.print("Masukan Nama Penghuni Kost : ");
+            System.out.print("Masukan Nama Penghuni Kost = ");
             String namap = br.readLine().trim();
             pstmt.setString(2, namap);
             
-            System.out.print("Masukan Nomor Handphone : ");
+            System.out.print("Masukan Nomor Handphone = ");
             String nohp = sc.next().trim();
             pstmt.setString(3, nohp);
             
-            System.out.print("Masukkan Profesi : ");
+            System.out.print("Masukkan Profesi = ");
             String pro = br.readLine().trim();
             pstmt.setString(4, pro);
           
@@ -111,9 +115,9 @@ public void tampilPenghuni() throws ClassNotFoundException, SQLException {
         rs = s.executeQuery(sql);
        
          
-            System.out.println("+----------------------------------------------------+");
-            System.out.println("|\t\tDATA PENGHUNI KOSTAN\t\t     |");
-            System.out.println("+----------------------------------------------------+");
+            System.out.println("**************************************");
+            System.out.println("\tData Penghuni Kost\t");
+            System.out.println("**************************************");
 
             while (rs.next()) {
                 
@@ -123,7 +127,7 @@ public void tampilPenghuni() throws ClassNotFoundException, SQLException {
                 String pro = rs.getString("profesi");
                 
                 
-                System.out.println(String.format("%-6s%-20s%-14s%-14s", ip, namap, nohp, pro));
+                System.out.println(String.format("%-6s%-14s%-14s%-14s", ip, namap, nohp, pro));
             }
             
             // close statement & connection
@@ -151,6 +155,10 @@ public void ubahPenghuni() throws IOException
         con = DriverManager.getConnection(urlValue);
         s = con.createStatement();
         
+        System.out.println("**************************************");
+        System.out.println("\tUbah Data Penghuni\t");
+        System.out.println("**************************************");
+        
         // memasukkan nomor kamar yang akan diubah datanya
         System.out.print("Masukkan Nomor Kamar yang Ingin diubah = ");
         String ip_baru = sc.next();
@@ -166,19 +174,19 @@ public void ubahPenghuni() throws IOException
         String namap = rs.getString("nama_penghuni");
         String nohp   = rs.getString("telp_penghuni");
         String pro   = rs.getString("profesi");
-        System.out.println("+----------------------------------------------------+");
-        System.out.println("       Data Penghuni yang akan diubah     ");
-        System.out.println("+----------------------------------------------------+");
-        System.out.println("Nomor Kamar\t\t  = " +ip);
-        System.out.println("Nama Penghuni\t\t  = " +namap);
-        System.out.println("Nomor Handphone\t\t = " +nohp);
-        System.out.println("Profesi\t\t  = " +pro);
+        System.out.println("**************************************");
+        System.out.println("\tData Penghuni yang akan diubah\t");
+        System.out.println("**************************************");
+        System.out.println("Nomor Kamar\t= " +ip);
+        System.out.println("Nama Penghuni\t= " +namap);
+        System.out.println("Telepon\t\t= " +nohp);
+        System.out.println("Profesi\t\t= " +pro);
         
         
         //Memasukkan data yang diubah
-        System.out.println("+----------------------------------------------------+");
-        System.out.println("         Masukkan Data Penghuni baru         ");
-        System.out.println("+----------------------------------------------------+");
+        System.out.println("**************************************");
+        System.out.println("\tMasukkan Data Penghuni baru\t");
+        System.out.println("**************************************");
         System.out.print("Nama Penghuni  = ");
         String namap_baru = sc.next();
         System.out.print("Nomor Handphone  = ");
@@ -221,7 +229,10 @@ public void ubahPenghuni() throws IOException
         con = DriverManager.getConnection(urlValue);
         s = con.createStatement();
             
-            
+        System.out.println("**************************************");
+        System.out.println("\tHapus Data Penghuni\t");
+        System.out.println("**************************************");
+        
         // ambil input dari user
         System.out.print("Nomor Kamar yang mau dihapus =  ");
       
@@ -260,6 +271,7 @@ public void ubahPenghuni() throws IOException
         con = DriverManager.getConnection(urlValue);
         s = con.createStatement();
         
+        
         //User memasukkan penghuni yang ingin dicari
         System.out.print("Masukkan Nomor Kamar yang dicari = ");
         String ip_cari = sc.next().trim();
@@ -276,13 +288,13 @@ public void ubahPenghuni() throws IOException
             String namap = rs.getString("nama_penghuni");
             String nohp  = rs.getString("telp_penghuni");
             String pro    = rs.getString("profesi");
-            System.out.println("====================================");
-            System.out.println("       Data Penghuni Yang Di Cari     ");
-            System.out.println("====================================");
-            System.out.println("Nomor Kamar = " +ip);
-            System.out.println("Nama Penghuni  = " +namap);
-            System.out.println("Telepon = " +nohp);
-            System.out.println("Profesi = " +pro);
+            System.out.println("**************************************");
+            System.out.println("\tData Penghuni Yang Di Cari\t");
+            System.out.println("**************************************");
+            System.out.println("Nomor Kamar\t= " +ip);
+            System.out.println("Nama Penghuni\t= " +namap);
+            System.out.println("Telepon\t\t= " +nohp);
+            System.out.println("Profesi\t\t= " +pro);
         }
         else
         {
@@ -333,13 +345,13 @@ public void ubahPenghuni() throws IOException
             String namap = rs.getString("nama_penghuni");
             String nohp  = rs.getString("telp_penghuni");
             String pro    = rs.getString("profesi");
-            System.out.println("====================================");
-            System.out.println("       Data Penghuni Yang Di Cari     ");
-            System.out.println("====================================");
-            System.out.println("Nomor Kamar = " +ip);
-            System.out.println("Nama Penghuni  = " +namap);
-            System.out.println("Telepon = " +nohp);
-            System.out.println("Profesi = " +pro);
+            System.out.println("**************************************");
+            System.out.println("\tData Penghuni Yang Di Cari\t");
+            System.out.println("**************************************");
+            System.out.println("Nomor Kamar\t= " +ip);
+            System.out.println("Nama Penghuni\t= " +namap);
+            System.out.println("Telepon\t\t= " +nohp);
+            System.out.println("Profesi\t\t= " +pro);
         }
         else
         {

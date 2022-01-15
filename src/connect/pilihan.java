@@ -22,17 +22,19 @@ public class pilihan {
         while(ulangi.equals("y")) {
         
         System.out.println(" ");
-        System.out.println("======================================");
-        System.out.println("             MENU UTAMA               ");
-        System.out.println("======================================");
+        System.out.println("Kamar Kost menyediakan Kost, selain itu Apalagi!");
+        System.out.println("Harga Mulai 1 Jutaan!/bulan");
+        System.out.println("*****************************");
+        System.out.println("\tMENU UTAMA\t");
+        System.out.println("*****************************");
         System.out.println("1. Sewa Kost");
         System.out.println("2. Transaksi Kost");
         System.out.println("3. Keterangan Kost");
         System.out.println("0. Keluar");
-        System.out.println("=====================================");
+        System.out.println("*****************************");
         System.out.print("Pilihan = ");
         int pilihan = sc.nextInt();
-        System.out.println("=====================================");
+        System.out.println("*****************************");
 
         switch (pilihan) {
                case 0:{
@@ -40,19 +42,19 @@ public class pilihan {
             }
             case 1:{
 
-                System.out.println("======================================");
-                System.out.println("              Penghuni Kost               ");
-                System.out.println("======================================");
+                System.out.println("*************************************");
+                System.out.println("\tPenghuni Kost\t");
+                System.out.println("*************************************");
                 System.out.println("1. Tambah Data Penghuni");
                 System.out.println("2. Tampil Data Penghuni ");
                 System.out.println("3. Ubah Data Penghuni");
                 System.out.println("4. Cari Data Penghuni");
                 System.out.println("5. Hapus Data Penghuni");
                 System.out.println("0. Keluar");
-                System.out.println("=====================================");
+                System.out.println("*************************************");
                 System.out.print("Pilihan = ");
                 int pilihan1 = sc.nextInt();
-                System.out.println("=====================================");
+                System.out.println("*************************************");
                 switch (pilihan1) {
                 case 0:{
                     System.exit(0);
@@ -71,16 +73,16 @@ public class pilihan {
                 break;
                     }
                 case 4:{
-                System.out.println("======================================");
-                System.out.println("           Cari Data Penghuni Kost              ");
-                System.out.println("======================================");
+                System.out.println("*********************************************************");
+                System.out.println("\tCari Data Penghuni Kost\t");
+                System.out.println("*********************************************************");
                 System.out.println("1. Cari Penghuni berdasarkan kode kamar");
                 System.out.println("2. Cari Penghuni berdasarkan nama");
                 System.out.println("0. Keluar");
-                System.out.println("=====================================");
+                System.out.println("*********************************************************");
                 System.out.print("Pilihan = ");
                 int cari1 = sc.nextInt();
-                System.out.println("=====================================");
+                System.out.println("*********************************************************");
                     switch (cari1) {
                    case 0:{
                        System.exit(0);
@@ -107,19 +109,19 @@ public class pilihan {
                 }
                 
             case 2:{
-                System.out.println("======================================");
-                System.out.println("             Transaksi Kost              ");
-                System.out.println("======================================");
+                System.out.println("****************************************");
+                System.out.println("\tTransaksi Kost\t");
+                System.out.println("****************************************");
                 System.out.println("1. Transaksi Sewa Kost ");
                 System.out.println("2. Tampil Data Transaksi");
                 System.out.println("3. Cari Transaksi Kost");
                 System.out.println("4. Ubah Transaksi Kost");
                 System.out.println("5. Hapus Transaksi Kost");
                 System.out.println("0. Keluar");
-                System.out.println("=====================================");
+                System.out.println("****************************************");
                 System.out.print("Pilihan = ");
                 int pilihan2 = sc.nextInt();
-                System.out.println("=====================================");
+                System.out.println("****************************************");
                 switch (pilihan2) {
                    case 0:{
                     System.exit(0);
@@ -134,16 +136,16 @@ public class pilihan {
                 break;
                     } 
                 case 3:{
-                System.out.println("======================================");
-                System.out.println("           Cari Data Penghuni Kost              ");
-                System.out.println("======================================");
-                System.out.println("1. Cari Penghuni berdasarkan kode kamar");
-                System.out.println("2. Cari Penghuni berdasarkan nama");
+                System.out.println("**********************************************************");
+                System.out.println("\t\tCari Data Transaksi Kost\t\t");
+                System.out.println("**********************************************************");
+                System.out.println("1. Cari Transaksi berdasarkan kode kamar");
+                System.out.println("2. Cari Transaksi berdasarkan nama");
                 System.out.println("0. Keluar");
-                System.out.println("=====================================");
+                System.out.println("**********************************************************");
                 System.out.print("Pilihan = ");
                 int cari2 = sc.nextInt();
-                System.out.println("=====================================");
+                System.out.println("**********************************************************");
                     switch (cari2) {
                    case 0:{
                        System.exit(0);
@@ -224,7 +226,7 @@ public class pilihan {
 */
 
     }
-        System.out.println("=====================================");
+        System.out.println("***************************************");
         System.out.print("Apakah anda ingin mengulang (y/n)? ");
         ulangi = sc.next();
         if(ulangi.equalsIgnoreCase("n")) {
