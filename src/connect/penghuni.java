@@ -262,7 +262,7 @@ public void ubahPenghuni() throws IOException
         
         //User memasukkan penghuni yang ingin dicari
         System.out.print("Masukkan Nomor Kamar yang dicari = ");
-        String ip_cari = br.readLine();
+        String ip_cari = sc.next().trim();
         
         //Query sql tampil yang akan di update
         String sql = "SELECT * FROM t_penghuni WHERE no_kamar='%s'";

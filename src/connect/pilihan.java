@@ -70,7 +70,7 @@ public class pilihan {
                 break;
                     }
                 case 4:{
-                    System.out.println("======================================");
+                System.out.println("======================================");
                 System.out.println("           Cari Data Penghuni Kost              ");
                 System.out.println("======================================");
                 System.out.println("1. Cari Penghuni berdasarkan kode kamar");
@@ -78,9 +78,9 @@ public class pilihan {
                 System.out.println("0. Keluar");
                 System.out.println("=====================================");
                 System.out.print("Pilihan = ");
-                int cari = sc.nextInt();
+                int cari1 = sc.nextInt();
                 System.out.println("=====================================");
-                    switch (cari) {
+                    switch (cari1) {
                    case 0:{
                        System.exit(0);
                    break;
@@ -124,8 +124,7 @@ public class pilihan {
                 System.out.println("1. Transaksi Sewa Kost ");
                 System.out.println("2. Tampil Data Transaksi");
                 System.out.println("3. Tampil Fasilitas Kamar Kost");
-                System.out.println("4. Cari Barang");
-                System.out.println("5. Hapus Barang");
+                System.out.println("4. Cari Transaksi Kost");
                 System.out.println("0. Keluar");
                 System.out.println("=====================================");
                 System.out.print("Pilihan = ");
@@ -145,20 +144,41 @@ public class pilihan {
                 break;
                     } 
                 case 3:{
-                    t.fasilitas_kost();
-                break;
-                    }/*
-                case 4:{
-                    brg.cari();
+                    t.ket_kost();
                 break;
                     }
+                case 4:{System.out.println("======================================");
+                System.out.println("           Cari Data Penghuni Kost              ");
+                System.out.println("======================================");
+                System.out.println("1. Cari Penghuni berdasarkan kode kamar");
+                System.out.println("2. Cari Penghuni berdasarkan nama");
+                System.out.println("0. Keluar");
+                System.out.println("=====================================");
+                System.out.print("Pilihan = ");
+                int cari2 = sc.nextInt();
+                System.out.println("=====================================");
+                    switch (cari2) {
+                   case 0:{
+                       System.exit(0);
+                   break;
+                       }
+                   case 1:{
+                       t.cariTransaksiNo();
+                   break;
+                   }
+                   case 2:{
+                       t.cariTransaksiNama();
+                       break;
+                   }
+                }
+                    break;
+                    /*
                 case 5:{
                     brg.hapus();
                 break;
                     }
                 */
                   }
-                break;
                 }
        /*     case 3:{
                 System.out.println("======================================");
@@ -216,6 +236,7 @@ public class pilihan {
             System.exit(0);
         }
     }
+}
 }
 }
         

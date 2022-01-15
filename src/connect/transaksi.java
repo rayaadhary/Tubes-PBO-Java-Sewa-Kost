@@ -19,6 +19,7 @@ public class transaksi {
     String host = "localhost";
     String db   = "kosan";
     Scanner sc = new Scanner(System.in);
+     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     Connection con;
     Statement s;
     ResultSet rs;
@@ -79,7 +80,7 @@ public class transaksi {
         //query tambah data pada tabel transaksi
         String sql = "INSERT INTO t_transaksi (no_kamar, jenis_kamar, nama_penghuni ,tanggal_transaksi,lama_sewa,harga_bulan,total) "
                 + "VALUES ('%s','%s','%s','%s','%d','%d','%d')";
-        sql = String.format(sql, ip, jkamar, namap, tanggal,  lama, hbulan, tot); 
+        sql = String.format(sql, ip, jkamar, namap, tanggal,  lama,  hbulan, tot); 
       
      
         s.execute(sql);
@@ -119,7 +120,7 @@ public class transaksi {
        
          
             System.out.println("+----------------------------------------------------+");
-            System.out.println("|\t\t\tDATA TRANSAKSI KOST\t\t\t     |");
+            System.out.println("|\t\t\tDATA TRANSAKSI KOST\t\t\t|");
             System.out.println("+----------------------------------------------------+");
 
             while (rs.next()) {
@@ -153,46 +154,42 @@ public class transaksi {
         }
     }
     
-    // menu pilihan untuk melihat fasilitas kamar kost
-    public void fasilitas_kost()  throws IOException, ClassNotFoundException
+    // menu pilihan untuk melihat keterangan kost
+    public void ket_kost()  throws IOException, ClassNotFoundException
     {
         try {
-        //Koneksi
+         //Koneksi
         Class.forName("com.mysql.cj.jdbc.Driver");
         String urlValue = "jdbc:mysql://"+host+"/"+db+"?user="+user+"&password="+pwd;
         con = DriverManager.getConnection(urlValue);
         s = con.createStatement();
             
-        String sql = "SELECT no_kamar,nama_penghuni, fasilitas,harga_bulan "
-                + "FROM t_transaksi "
-                + "INNER JOIN t_kamar "
-                + "ON jenis_kamar = jenis_kamar";
+        String sql = "SELECT * FROM t_kamar";
         
         rs = s.executeQuery(sql);
        
          
-            System.out.println("+----------------------------------------------------+");
-            System.out.println("|\t\tDATA FASILITAS KOST\t\t     |");
-            System.out.println("+----------------------------------------------------+");
+            System.out.println("+---------------------------------------------------------------+");
+            System.out.println("|\t\t\tDATA KETERANGAN KOST\t\t\t|");
+            System.out.println("+---------------------------------------------------------------+");
 
             while (rs.next()) {
                 
-                int ip = rs.getInt("no_kamar");
-                String namap = rs.getString("nama_penghuni");
                 String jkamar = rs.getString("jenis_kamar");
+                String jumlah = rs.getString("jumlah_kamar");
+                String ketno = rs.getString("ket_no_kamar");
                 String fas = rs.getString("fasilitas");
                 int hbulan = rs.getInt("harga_bulan");
-              
                 
                 
-                System.out.println(String.format("%-4s%-14s%-10s%-14s%-12s"
-                        , ip, namap,jkamar, fas, hbulan));
+                System.out.println(String.format("%-10s%-4s%-10s%-26s%-12s"
+                        ,jkamar, jumlah, ketno, fas, hbulan));
             }
             
             // close statement & connection
             con.close();
             s.close();
-        } 
+        }  
         
             // error
          catch(SQLException e){
@@ -203,4 +200,135 @@ public class transaksi {
             System.out.println("JDBC Driver tidak ditemukan");
         }
     }
-}
+    
+    
+    // cari transaksi berdasarkan nomor kamar
+  public void cariTransaksiNo() throws IOException
+    {
+        
+        try{
+        //Koneksi
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        String urlValue = "jdbc:mysql://"+host+"/"+db+"?user="+user+"&password="+pwd;
+        con = DriverManager.getConnection(urlValue);
+        s = con.createStatement();
+        
+        //User memasukkan no kamar yang ingin dicari
+        System.out.print("Masukkan Nomor Kamar yang dicari = ");
+        int ip_cari = sc.nextInt();
+        
+        //Query sql tampil yang akan di update
+        String sql = "SELECT * FROM t_transaksi WHERE no_kamar='%s'";
+        sql = String.format(sql, ip_cari);
+        
+        //Eksekusi Query
+        rs = s.executeQuery(sql);
+        if (rs.next())
+        {
+            int id = rs.getInt("id_transaksi");
+            int ip   = rs.getInt("no_kamar");
+            String jkamar = rs.getString("jenis_kamar");
+            String namap = rs.getString("nama_penghuni");
+            String tanggal = rs.getString("tanggal_transaksi");
+            int lama = rs.getInt("lama_sewa");
+            int hbulan = rs.getInt("harga_bulan");
+            int tot = rs.getInt("total");
+            System.out.println("====================================");
+            System.out.println("       Data Transaksi yang Dicari     ");
+            System.out.println("====================================");
+            System.out.println("Id Transaksi = "+id);
+            System.out.println("Nomor Kamar = " +ip);
+            System.out.println("Jenis Kamar = "+jkamar);
+            System.out.println("Nama Penghuni  = " +namap);
+            System.out.println("Tanggal Transaksi = " +tanggal);
+            System.out.println("Lama Sewa = " +lama);
+            System.out.println("Harga Bulan = "+hbulan);
+            System.out.println("Total = "+tot);
+        }
+        else
+        {
+            System.out.println("Data Transaksi tidak ditemukan!");
+        }
+        
+        //Close Statement dan Conn
+        con.close();
+        s.close();
+        
+        //Error
+        }
+        catch (SQLException e)
+        {
+          System.out.println("Koneksi Gagal" +e.toString());
+        }
+        catch (ClassNotFoundException e)
+        {
+            System.out.println("JDBC Driver tidak ditemukan");
+        }
+    }
+ 
+
+ 
+ // cari data transaksi berdasarkan nama
+  public void cariTransaksiNama() throws IOException
+    {
+        try{
+        //Koneksi
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        String urlValue = "jdbc:mysql://"+host+"/"+db+"?user="+user+"&password="+pwd;
+        con = DriverManager.getConnection(urlValue);
+        s = con.createStatement();
+        
+        //User memasukkan penghuni yang ingin dicari
+        System.out.print("Masukkan Nama Penghuni yang dicari = ");
+        String namap_cari = br.readLine();
+        
+        //Query sql tampil yang akan di update
+        String sql = "SELECT * FROM t_transaksi WHERE nama_penghuni='%s'";
+        sql = String.format(sql, namap_cari);
+        
+        //Eksekusi Query
+        rs = s.executeQuery(sql);
+        if (rs.next())
+        {
+            int id = rs.getInt("id_transaksi");
+            int ip   = rs.getInt("no_kamar");
+            String jkamar = rs.getString("jenis_kamar");
+            String namap = rs.getString("nama_penghuni");
+            String tanggal = rs.getString("tanggal_transaksi");
+            int lama = rs.getInt("lama_sewa");
+            int hbulan = rs.getInt("harga_bulan");
+            int tot = rs.getInt("total");
+            System.out.println("====================================");
+            System.out.println("       Data Transaksi yang Dicari     ");
+            System.out.println("====================================");
+            System.out.println("Id Transaksi = "+id);
+            System.out.println("Nomor Kamar = " +ip);
+            System.out.println("Jenis Kamar = "+jkamar);
+            System.out.println("Nama Penghuni  = " +namap);
+            System.out.println("Tanggal Transaksi = " +tanggal);
+            System.out.println("Lama Sewa = " +lama);
+            System.out.println("Harga Bulan = "+hbulan);
+            System.out.println("Total = "+tot);
+        }
+        else
+        {
+            System.out.println("Data Transaksi tidak ditemukan!");
+        }
+        
+        //Close Statement dan Conn
+        con.close();
+        s.close();
+        
+        //Error
+        }
+        catch (SQLException e)
+        {
+          System.out.println("Koneksi Gagal" +e.toString());
+        }
+        catch (ClassNotFoundException e)
+        {
+            System.out.println("JDBC Driver tidak ditemukan");
+        }
+    }
+} 
+
