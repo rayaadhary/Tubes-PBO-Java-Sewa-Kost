@@ -27,7 +27,7 @@ public class pilihan {
         System.out.println("======================================");
         System.out.println("1. Sewa Kost");
         System.out.println("2. Transaksi Kost");
-        System.out.println("3. Data Penghuni");
+        System.out.println("3. Keterangan Kost");
         System.out.println("0. Keluar");
         System.out.println("=====================================");
         System.out.print("Pilihan = ");
@@ -106,26 +106,14 @@ public class pilihan {
                     break;
                 }
                 
-            
-                
-                /*
-                case 0:{
-                    System.exit(0);
-                break;
-                    }
-                  }
-                }
-                    break;
-        }
-        } */
             case 2:{
                 System.out.println("======================================");
                 System.out.println("             Transaksi Kost              ");
                 System.out.println("======================================");
                 System.out.println("1. Transaksi Sewa Kost ");
                 System.out.println("2. Tampil Data Transaksi");
-                System.out.println("3. Tampil Fasilitas Kamar Kost");
-                System.out.println("4. Cari Transaksi Kost");
+                System.out.println("3. Cari Transaksi Kost");
+                System.out.println("4. Ubah Transaksi Kost");
                 System.out.println("0. Keluar");
                 System.out.println("=====================================");
                 System.out.print("Pilihan = ");
@@ -145,10 +133,7 @@ public class pilihan {
                 break;
                     } 
                 case 3:{
-                    k.ket_kost();
-                break;
-                    }
-                case 4:{System.out.println("======================================");
+                System.out.println("======================================");
                 System.out.println("           Cari Data Penghuni Kost              ");
                 System.out.println("======================================");
                 System.out.println("1. Cari Penghuni berdasarkan kode kamar");
@@ -173,14 +158,18 @@ public class pilihan {
                    }
                 }
                     break;
-                    /*
-                case 5:{
-                    brg.hapus();
-                break;
-                    }
-                */
                   }
+                case 4:{
+                    t.ubahTransaksi();
+                    break;
                 }
+                }
+                break;
+            }
+            case 3:{
+                k.ket_kost();
+                break;
+            }
        /*     case 3:{
                 System.out.println("======================================");
                 System.out.println("             Data Keuangan            ");
@@ -237,7 +226,6 @@ public class pilihan {
             System.exit(0);
         }
     }
-}
 }
 }
         

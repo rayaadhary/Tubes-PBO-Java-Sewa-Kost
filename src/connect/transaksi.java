@@ -154,6 +154,84 @@ public class transaksi {
         }
     }
     
+    // ubah data penghuni
+public void ubahTransaksi() throws IOException
+    {
+        try{
+        //Koneksi
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        String urlValue = "jdbc:mysql://"+host+"/"+db+"?user="+user+"&password="+pwd;
+        con = DriverManager.getConnection(urlValue);
+        s = con.createStatement();
+        
+        // memasukkan nomor kamar yang akan diubah lama sewanya
+        System.out.print("Masukkan Nomor Kamar yang Ingin diubah = ");
+        String ip_baru = sc.next();
+        
+        //Query sql tampil yang akan di update
+        String sql = "SELECT * FROM t_transaksi WHERE no_kamar='%s'";
+        sql = String.format(sql, ip_baru);
+        
+        //Eksekusi Query
+        rs = s.executeQuery(sql);
+        rs.next();
+        int id = rs.getInt("id_transaksi");
+        String ip   = rs.getString("no_kamar");
+        String jkamar = rs.getString("jenis_kamar");
+        String namap = rs.getString("nama_penghuni");
+        String tanggal = rs.getString("tanggal_transaksi");
+        int lama = rs.getInt("lama_sewa");
+        int hbulan = rs.getInt("harga_bulan");
+        int tot = rs.getInt("total");
+        System.out.println("+----------------------------------------------------+");
+        System.out.println("       Data Transaksi yang akan diubah     ");
+        System.out.println("+----------------------------------------------------+");
+        System.out.println("Id Transaksi = "+id);
+        System.out.println("Nomor Kamar = " +ip);
+        System.out.println("Jenis Kamar = "+jkamar);
+        System.out.println("Nama Penghuni  = " +namap);
+        System.out.println("Tanggal Transaksi = " +tanggal);
+        System.out.println("Lama Sewa = " +lama);
+        System.out.println("Harga Bulan = "+hbulan);
+        System.out.println("Total = "+tot);
+        
+        //Memasukkan data sewa yang diubah
+        System.out.println("+----------------------------------------------------+");
+        System.out.println("         Masukkan Transaksi baru         ");
+        System.out.println("+----------------------------------------------------+");
+        
+        System.out.print("Tanggal Transaksi (T-B-H) = ");
+        String tanggal_baru = sc.next();
+        
+        System.out.print("Lama Sewa = ");
+        int lama_baru = sc.nextInt();
+        
+        tot = lama_baru * hbulan;
+        
+        //Query sql update
+        String sqlbaru = "UPDATE t_transaksi SET  tanggal_transaksi ='%s', lama_sewa='%d', total='%d'  WHERE no_kamar='%s'";
+        sqlbaru = String.format(sqlbaru, tanggal_baru, lama_baru, tot, ip_baru);
+        
+        //Eksekusi Query Update
+        s.execute(sqlbaru);
+        System.out.println("Ubah Transaksi Berhasil");
+        
+        //Close Statement dan Conn
+        con.close();
+        s.close();
+        
+        //Eror
+        }
+        catch (SQLException e)
+        {
+          System.out.println("Koneksi Gagal" +e.toString());
+        }
+        catch (ClassNotFoundException e)
+        {
+            System.out.println("JDBC Driver tidak ditemukan");
+        }
+    }
+    
     // cari transaksi berdasarkan nomor kamar
   public void cariTransaksiNo() throws IOException
     {
