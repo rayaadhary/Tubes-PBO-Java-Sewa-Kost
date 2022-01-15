@@ -12,6 +12,7 @@ public class pilihan {
     // created object
     penghuni p = new penghuni();    
     transaksi t = new transaksi();
+    kamar k = new kamar();
     
     public void menu() throws IOException, SQLException, ClassNotFoundException {
         // create object
@@ -144,7 +145,7 @@ public class pilihan {
                 break;
                     } 
                 case 3:{
-                    t.ket_kost();
+                    k.ket_kost();
                 break;
                     }
                 case 4:{System.out.println("======================================");
