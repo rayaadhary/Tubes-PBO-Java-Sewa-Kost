@@ -46,9 +46,9 @@ public void tambahPenghuni() throws IOException, SQLException, ClassNotFoundExce
             System.out.println("**************************************");
             
             System.out.println("Harga yang tertera sesuai range kode kamar");
-            System.out.println("Ekonomi\t=\tRp.1000000\t1 - 10");
-            System.out.println("Standar\t=\tRp.2000000\t11 - 20");
-            System.out.println("Atas\t=\tRp.3000000\t21- 30");
+            System.out.println("Ekonomi\t=\tFree Wifi\t\tRp.1000000\t1 - 10");
+            System.out.println("Standar\t=\tFree Wifi, Jemuran\tRp.2000000\t11 - 20");
+            System.out.println("Atas\t=\tFree Wifi, AC, Kulkas\tRp.3000000\t21- 30");
             
             // input dari user  
             System.out.print("Masukan Kode Kamar  : ");
