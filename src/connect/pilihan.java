@@ -27,7 +27,7 @@ public class pilihan {
         System.out.println("*****************************");
         System.out.println("\tMENU UTAMA\t");
         System.out.println("*****************************");
-        System.out.println("1. Sewa Kost");
+        System.out.println("1. Penghuni Kost");
         System.out.println("2. Transaksi Kost");
         System.out.println("3. Keterangan Kost");
         System.out.println("0. Keluar");
@@ -40,15 +40,14 @@ public class pilihan {
                case 0:{
                 System.exit(0);
             }
-            case 1:{
-
+            case 1: {
                 System.out.println("*************************************");
                 System.out.println("\tPenghuni Kost\t");
                 System.out.println("*************************************");
                 System.out.println("1. Tambah Data Penghuni");
                 System.out.println("2. Tampil Data Penghuni ");
-                System.out.println("3. Ubah Data Penghuni");
-                System.out.println("4. Cari Data Penghuni");
+                System.out.println("3. Cari Data Penghuni");
+                System.out.println("4. Ubah Data Penghuni");
                 System.out.println("5. Hapus Data Penghuni");
                 System.out.println("0. Keluar");
                 System.out.println("*************************************");
@@ -69,10 +68,6 @@ public class pilihan {
                 break;
                     }
                 case 3:{
-                    p.ubahPenghuni();
-                break;
-                    }
-                case 4:{
                 System.out.println("*********************************************************");
                 System.out.println("\tCari Data Penghuni Kost\t");
                 System.out.println("*********************************************************");
@@ -98,6 +93,11 @@ public class pilihan {
                    }
                 }
                     break;
+                }
+                case 4:
+                {
+                       p.ubahPenghuni();
+                       break;
                 }
                 case 5:
                 {
@@ -166,66 +166,41 @@ public class pilihan {
                     t.ubahTransaksi();
                     break;
                 }
-                case 5:{
+                case 5: {
                     t.hapusTransaksi();
                     break;
                 }
-                }
+            }
                 break;
             }
             case 3:{
-                k.ket_kost();
-                break;
-            }
-       /*     case 3:{
-                System.out.println("======================================");
-                System.out.println("             Data Keuangan            ");
-                System.out.println("======================================");
-                System.out.println("1. Tampil Data Pemasukan");
-                System.out.println("2. Cari Data Pemasukan Berdasarkan Tggl");
-                System.out.println("3. Tambah Pengeluaran");
-                System.out.println("4. Tampil Pengeluaran");
-                System.out.println("5. Hapus Pengeluaran");
+                System.out.println("*********************************************************");
+                System.out.println("\tData Keterangan Kamar Kost\t");
+                System.out.println("*********************************************************");
+                System.out.println("1. Keterangan Kamar Kost");
+                System.out.println("2. Data Kamar Kost");
                 System.out.println("0. Keluar");
-                System.out.println("=====================================");
+                System.out.println("*********************************************************");
                 System.out.print("Pilihan = ");
-                int pilih3 = input.nextInt();
-                System.out.println("=====================================");
-                switch (pilih3) {
+                int pilihan3 = sc.nextInt();
+                System.out.println("*********************************************************");
+                  switch (pilihan3) {
+                   case 0:{
+                    System.exit(0);
+                break;
+                    }    
                 case 1:{
-                    ku.tampil_pemasukan();
+                    k.ket_kost();
                 break;
                     }
                 case 2:{
-                    ku.tampil_tanggal();
+                    k.tampilKamar();
                 break;
-                    }
-                case 3:{
-                    ku.tambah_pengeluarah();
-                break;
-                    }
-                case 4:{
-                    ku.tampil_pengeluaran();
-                break;
-                    }
-                case 5:{
-                    ku.hapus_pengeluaran();
-                break;
-                    }
-                case 0:{
-                    System.exit(0);
-                break;
-                    }
-                  }
-                }
-                    break;
-            case 0:{
-                System.exit(0);
+                    } 
             }
-                break;
-*/
-
+            break;
     }
+        }
         System.out.println("***************************************");
         System.out.print("Apakah anda ingin mengulang (y/n)? ");
         ulangi = sc.next();

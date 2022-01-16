@@ -198,7 +198,7 @@ public void ubahTransaksi() throws IOException
         System.out.println("Nomor Kamar\t= " +ip);
         System.out.println("Jenis Kamar\t= "+jkamar);
         System.out.println("Nama Penghuni\t= " +namap);
-        System.out.println("Tanggal Transaksi\t= " +tanggal);
+        System.out.println("Tanggal Transaksi= " +tanggal);
         System.out.println("Lama Sewa\t= " +lama);
         System.out.println("Harga Bulan\t= "+hbulan);
         System.out.println("Total\t\t= "+tot);
@@ -278,7 +278,7 @@ public void ubahTransaksi() throws IOException
             System.out.println("Nomor Kamar\t= " +ip);
             System.out.println("Jenis Kamar\t= "+jkamar);
             System.out.println("Nama Penghuni\t= " +namap);
-            System.out.println("Tanggal Transaksi\t= " +tanggal);
+            System.out.println("Tanggal Transaksi= " +tanggal);
             System.out.println("Lama Sewa\t= " +lama);
             System.out.println("Harga Bulan\t= "+hbulan);
             System.out.println("Total\t\t= "+tot);
@@ -343,7 +343,7 @@ public void ubahTransaksi() throws IOException
             System.out.println("Nomor Kamar\t= " +ip);
             System.out.println("Jenis Kamar\t= "+jkamar);
             System.out.println("Nama Penghuni\t= " +namap);
-            System.out.println("Tanggal Transaksi\t= " +tanggal);
+            System.out.println("Tanggal Transaksi= " +tanggal);
             System.out.println("Lama Sewa\t= " +lama);
             System.out.println("Harga Bulan\t= "+hbulan);
             System.out.println("Total\t\t= "+tot);

@@ -71,4 +71,56 @@ public class kamar {
             System.out.println("JDBC Driver tidak ditemukan");
         }
     }
+    
+    
+    
+    // pilihan menampilkan data kamar dan fasilitas
+public void tampilKamar() throws ClassNotFoundException, SQLException {
+       
+    try {
+        //Koneksi
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        String urlValue = "jdbc:mysql://"+host+"/"+db+"?user="+user+"&password="+pwd;
+        con = DriverManager.getConnection(urlValue);
+        s = con.createStatement();
+        
+          
+       String sql = "SELECT t1.`nama_penghuni` , t2.`jenis_kamar`, t2.`fasilitas` , t2.`harga_bulan` , t1.`tanggal_transaksi` "
+               + "FROM `t_transaksi` t1 "
+               + "INNER JOIN t_kamar t2 "
+               + "ON t1.`jenis_kamar` = t2.`jenis_kamar`";
+      
+        rs = s.executeQuery(sql);
+       
+         
+            System.out.println("************************************************************************");
+            System.out.println("\t\t\tTampil Kamar Kost\t\t\t");
+            System.out.println("************************************************************************");
+
+            while (rs.next()) {
+                
+                String namap = rs.getString("nama_penghuni");
+                String jkamar = rs.getString("jenis_kamar");
+                String fas = rs.getString("fasilitas");
+                int hbulan = rs.getInt("harga_bulan");
+                String tanggal = rs.getString("tanggal_transaksi");
+              
+                System.out.println(String.format("%-14s%-10s%-18s%-12s%-14s"
+                        ,namap, jkamar, fas, hbulan,tanggal));
+            }
+            
+            // close statement & connection
+            con.close();
+            s.close();
+        } 
+        
+            // error
+         catch(SQLException e){
+            System.out.println("Koneksi Gagal "+e.toString());
+        }
+        catch (ClassNotFoundException e)
+        {
+            System.out.println("JDBC Driver tidak ditemukan");
+        }
+    }
 }
