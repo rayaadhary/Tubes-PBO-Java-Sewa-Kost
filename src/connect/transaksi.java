@@ -395,7 +395,17 @@ public void ubahTransaksi() throws IOException
         // hapus data
         s.execute(sql);
         
-        System.out.println("Data telah terhapus...");
+        //System.out.println("Data telah terhapus...");
+        
+           int intBaris =  s.executeUpdate(sql);
+            if(intBaris > 0)
+            {
+                System.out.println("Data transaksi telah terhapus");
+            }
+            else
+            {
+                System.out.println("Data No Kamar yang diinputkan tidak ada");
+            } 
         
         //Close Statement dan Conn
         con.close();
