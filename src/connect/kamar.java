@@ -14,10 +14,10 @@ import java.sql.*;
  */
 public class kamar {
     
-    String user = "sql11465934";
-    String pwd  = "Px69EyGqez";
-    String host = "sql11.freemysqlhosting.net";
-    String db   = "sql11465934";
+    String user = "root";
+    String pwd = "";
+    String host = "localhost";
+    String db = "kosan";
     
     Scanner sc = new Scanner(System.in);
      BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

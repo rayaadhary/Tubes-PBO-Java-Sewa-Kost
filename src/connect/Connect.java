@@ -18,10 +18,10 @@ public class Connect {
      */
     public static void main(String[] args) throws Exception{
         // TODO code application logic here
-    String user = "sql11465934";
-    String pwd  = "Px69EyGqez";
-    String host = "sql11.freemysqlhosting.net";
-    String db   = "sql11465934";
+    String user = "root";
+    String pwd = "";
+    String host = "localhost";
+    String db = "kosan";
     Connection con;
     Statement s;
     ResultSet rs;
