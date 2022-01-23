@@ -393,12 +393,9 @@ public void ubahTransaksi() throws IOException
         String sql = String.format("DELETE FROM t_transaksi WHERE no_kamar='%s'",ip);
        
         // hapus data
-        s.execute(sql);
-        
-        //System.out.println("Data telah terhapus...");
-        
-           int intBaris =  s.executeUpdate(sql);
-            if(intBaris > 0)
+            int intBaris =  s.executeUpdate(sql);
+           
+            if (intBaris > 0)
             {
                 System.out.println("Data transaksi telah terhapus");
             }

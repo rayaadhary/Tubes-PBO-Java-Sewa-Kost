@@ -242,7 +242,6 @@ public void ubahPenghuni() throws IOException
         String sql = String.format("DELETE FROM t_penghuni WHERE no_kamar='%s'",ip);
        
         // hapus data
-        s.execute(sql);
          int intBaris =  s.executeUpdate(sql);
             if(intBaris > 0)
             {
