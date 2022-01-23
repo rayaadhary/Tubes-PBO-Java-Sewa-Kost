@@ -169,7 +169,8 @@ public void ubahPenghuni() throws IOException
         
         //Eksekusi Query
         rs = s.executeQuery(sql);
-        rs.next();
+        if (rs.next()) 
+        {
         String ip   = rs.getString("no_kamar");
         String namap = rs.getString("nama_penghuni");
         String nohp   = rs.getString("telp_penghuni");
@@ -202,6 +203,11 @@ public void ubahPenghuni() throws IOException
         //Eksekusi Query Update
         s.execute(sqlbaru);
         System.out.println("Ubah Data Berhasil");
+        }
+        else 
+        {
+            System.out.println("Data No Kamar yang diinputkan tidak ada");
+        }
         
         //Close Statement dan Conn
         con.close();

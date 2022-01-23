@@ -180,9 +180,11 @@ public void ubahTransaksi() throws IOException
         String sql = "SELECT * FROM t_transaksi WHERE no_kamar='%s'";
         sql = String.format(sql, ip_baru);
         
+            
         //Eksekusi Query
         rs = s.executeQuery(sql);
-        rs.next();
+        if (rs.next()) 
+        {
         int id = rs.getInt("id_transaksi");
         String ip   = rs.getString("no_kamar");
         String jkamar = rs.getString("jenis_kamar");
@@ -223,6 +225,11 @@ public void ubahTransaksi() throws IOException
         //Eksekusi Query Update
         s.execute(sqlbaru);
         System.out.println("Ubah Transaksi Berhasil");
+        }
+        else
+        {
+            System.out.println("Data No Kamar yang diinputkan tidak ada");
+        }
         
         //Close Statement dan Conn
         con.close();
@@ -232,7 +239,7 @@ public void ubahTransaksi() throws IOException
         }
         catch (SQLException e)
         {
-          System.out.println("Data No Kamar yang diinputkan tidak ada" +e.toString());
+          System.out.println("Koneksi Gagal" +e.toString());
         }
         catch (ClassNotFoundException e)
         {
