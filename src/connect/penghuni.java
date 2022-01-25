@@ -14,10 +14,17 @@ import java.io.*;
 
 public class penghuni {
     
+<<<<<<< HEAD
     String user = "root";
     String pwd = "";
     String host = "localhost";
     String db = "kosan";
+=======
+    String user = "u8mbgqaxoeg0zcis";
+    String pwd = "FjguBHwUNDBwFYCURw9R";
+    String host = "bnqpvwcz8bi4g2dv8co1-mysql.services.clever-cloud.com";
+    String db = "bnqpvwcz8bi4g2dv8co1";
+>>>>>>> f7ed01c (revisi tampilan oleh daffa)
     Scanner sc = new Scanner(System.in);
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     Connection con;
@@ -115,9 +122,16 @@ public void tampilPenghuni() throws ClassNotFoundException, SQLException {
         rs = s.executeQuery(sql);
        
          
+<<<<<<< HEAD
             System.out.println("**************************************");
             System.out.println("\tData Penghuni Kost\t");
             System.out.println("**************************************");
+=======
+            System.out.println("******************************************************");
+            System.out.println("*\t\t   Data Penghuni Kost\t\t     *");
+            System.out.println("******************************************************");
+            System.out.println("Kamar\t    Nama\t  No HP\t\t    Profesi");
+>>>>>>> f7ed01c (revisi tampilan oleh daffa)
 
             while (rs.next()) {
                 
@@ -127,7 +141,11 @@ public void tampilPenghuni() throws ClassNotFoundException, SQLException {
                 String pro = rs.getString("profesi");
                 
                 
+<<<<<<< HEAD
                 System.out.println(String.format("%-6s%-14s%-14s%-14s", ip, namap, nohp, pro));
+=======
+                System.out.println(String.format("%-12s%-14s%-18s%-16s", ip, namap, nohp, pro));
+>>>>>>> f7ed01c (revisi tampilan oleh daffa)
             }
             
             // close statement & connection
