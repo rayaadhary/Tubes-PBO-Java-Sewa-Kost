@@ -143,7 +143,7 @@ public class transaksi {
                 int tot = rs.getInt("total");
                 
                 
-                System.out.println(String.format("%%-16s%-8s%-16s%-16s%-24s%-8s%-16s%-4s"
+                System.out.println(String.format("%-16s%-8s%-16s%-16s%-24s%-8s%-16s%-4s"
                         ,id, ip, jkamar, namap,tanggal, lama, hbulan, tot));
             }
             
