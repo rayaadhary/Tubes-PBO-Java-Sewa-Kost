@@ -18,17 +18,11 @@ public class Connect {
      */
     public static void main(String[] args) throws Exception{
         // TODO code application logic here
-<<<<<<< HEAD
     String user = "root";
     String pwd = "";
     String host = "localhost";
     String db = "kosan";
-=======
-    String user = "u8mbgqaxoeg0zcis";
-    String pwd = "FjguBHwUNDBwFYCURw9R";
-    String host = "bnqpvwcz8bi4g2dv8co1-mysql.services.clever-cloud.com";
-    String db = "bnqpvwcz8bi4g2dv8co1";
->>>>>>> f7ed01c (revisi tampilan oleh daffa)
+
     Connection con;
     Statement s;
     ResultSet rs;

@@ -14,17 +14,10 @@ import java.sql.*;
  */
 public class kamar {
     
-<<<<<<< HEAD
     String user = "root";
     String pwd = "";
     String host = "localhost";
     String db = "kosan";
-=======
-    String user = "u8mbgqaxoeg0zcis";
-    String pwd = "FjguBHwUNDBwFYCURw9R";
-    String host = "bnqpvwcz8bi4g2dv8co1-mysql.services.clever-cloud.com";
-    String db = "bnqpvwcz8bi4g2dv8co1";
->>>>>>> f7ed01c (revisi tampilan oleh daffa)
     
     Scanner sc = new Scanner(System.in);
      BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -100,18 +93,11 @@ public void tampilKamar() throws ClassNotFoundException, SQLException {
       
         rs = s.executeQuery(sql);
        
-         
-<<<<<<< HEAD
-            System.out.println("************************************************************************");
-            System.out.println("\t\t\tTampil Kamar Kost\t\t\t");
-            System.out.println("************************************************************************");
-=======
+    
             System.out.println("*************************************************************************************************");
             System.out.println("*\t\t\t\t\tTampil Kamar Kost\t\t\t\t\t*");
             System.out.println("*************************************************************************************************");
             System.out.println("Nama\t      Jenis Kamar\tFasilitas\t\t\tHarga\t\tTanggal transaksi");
->>>>>>> f7ed01c (revisi tampilan oleh daffa)
-
             while (rs.next()) {
                 
                 String namap = rs.getString("nama_penghuni");
@@ -120,11 +106,7 @@ public void tampilKamar() throws ClassNotFoundException, SQLException {
                 int hbulan = rs.getInt("harga_bulan");
                 String tanggal = rs.getString("tanggal_transaksi");
               
-<<<<<<< HEAD
-                System.out.println(String.format("%-14s%-10s%-18s%-12s%-14s"
-=======
                 System.out.println(String.format("%-14s%-18s%-30s%-18s%-14s"
->>>>>>> f7ed01c (revisi tampilan oleh daffa)
                         ,namap, jkamar, fas, hbulan,tanggal));
             }
             
