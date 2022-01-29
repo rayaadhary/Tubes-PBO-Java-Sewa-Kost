@@ -53,7 +53,7 @@ public void tambahPenghuni() throws IOException, SQLException, ClassNotFoundExce
             System.out.println("Atas\t=\tFree Wifi, AC, Kulkas\tRp.3000000\t21- 30");
             
             // input dari user  
-            System.out.print("Masukan Kode Kamar  : ");
+            System.out.print("Masukan Kode Kamar = ");
             int ip = sc.nextInt();
             
             if (ip > 0 && ip < 31){
@@ -231,17 +231,23 @@ public void ubahPenghuni() throws IOException
 
     // hapus data penghuni
  public void hapusPenghuni() throws IOException, ClassNotFoundException{
-    
-        try {
+        
+        System.out.println("**************************************");
+        System.out.println("\tHapus Data Penghuni\t");
+        System.out.println("**************************************");
+        
+        // Validasi untuk pilihan hapus data penghuni
+        System.out.print("Apakah anda yakin ingin menghapus (y/n)? ");
+       String ulangi = sc.next();
+        if(ulangi.equals("y")) 
+        {
+        try 
+        {
         //koneksi
         Class.forName("com.mysql.cj.jdbc.Driver");
         String urlValue = "jdbc:mysql://"+host+"/"+db+"?user="+user+"&password="+pwd;
         con = DriverManager.getConnection(urlValue);
         s = con.createStatement();
-            
-        System.out.println("**************************************");
-        System.out.println("\tHapus Data Penghuni\t");
-        System.out.println("**************************************");
         
         // ambil input dari user
         System.out.print("Nomor Kamar yang mau dihapus =  ");
@@ -251,7 +257,7 @@ public void ubahPenghuni() throws IOException
         // buat query hapus
         String sql = String.format("DELETE FROM t_penghuni WHERE no_kamar='%s'",ip);
        
-        // hapus data
+        // validasi hapus data
          int intBaris =  s.executeUpdate(sql);
             if(intBaris > 0)
             {
@@ -274,8 +280,15 @@ public void ubahPenghuni() throws IOException
         {
             System.out.println("JDBC Driver tidak ditemukan");
         }
-} 
+        
+        if (ulangi.equalsIgnoreCase("n")) {
+            System.exit(0);
+        }
+    }
+ } 
  
+        
+        
  // cari penghuni berdasarkan nomor kamar
   public void cariPenghuniNo() throws IOException
     {

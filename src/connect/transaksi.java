@@ -382,19 +382,24 @@ public void ubahTransaksi() throws IOException
   
   // hapus transaksi 
  public void hapusTransaksi() throws IOException, ClassNotFoundException{
-    
-        try {
+        
+        System.out.println("**************************************");
+        System.out.println("\tHapus Data Transaksi\t");
+        System.out.println("**************************************");
+        
+        // Validasi untuk pilihan hapus data transaksi
+       System.out.print("Apakah anda yakin ingin menghapus (y/n)? ");
+       String ulangi = sc.next();
+        if(ulangi.equals("y")) 
+        {
+        try 
+        {
         //koneksi
         Class.forName("com.mysql.cj.jdbc.Driver");
         String urlValue = "jdbc:mysql://"+host+"/"+db+"?user="+user+"&password="+pwd;
         con = DriverManager.getConnection(urlValue);
         s = con.createStatement();
-            
-         System.out.println("**************************************");
-         System.out.println("\tHapus Data Transaksi \t");
-         System.out.println("**************************************");
-        
-        
+              
         // ambil input dari user
         System.out.print("Nomor Kamar yang mau dihapus =  ");
       
@@ -403,7 +408,7 @@ public void ubahTransaksi() throws IOException
         // buat query hapus
         String sql = String.format("DELETE FROM t_transaksi WHERE no_kamar='%s'",ip);
        
-        // hapus data
+        // validasi hapus data
             int intBaris =  s.executeUpdate(sql);
            
             if (intBaris > 0)
@@ -427,6 +432,11 @@ public void ubahTransaksi() throws IOException
         {
             System.out.println("JDBC Driver tidak ditemukan");
         }
+        
+        if (ulangi.equalsIgnoreCase("n")) {
+            System.exit(0);
+        }
+        }
 } 
-} 
+}
 
