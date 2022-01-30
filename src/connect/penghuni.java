@@ -187,6 +187,11 @@ public void ubahPenghuni() throws IOException
         System.out.println("Telepon\t\t= " +nohp);
         System.out.println("Profesi\t\t= " +pro);
         
+        // Validasi untuk pilihan ubah data penghuni
+        System.out.print("Apakah anda yakin ingin mengubah (y/n)? ");
+       String ulangi = sc.next();
+        if(ulangi.equals("y")) 
+        {
         
         //Memasukkan data yang diubah
         System.out.println("**************************************");
@@ -207,6 +212,11 @@ public void ubahPenghuni() throws IOException
         //Eksekusi Query Update
         s.execute(sqlbaru);
         System.out.println("Ubah Data Berhasil");
+        
+        if (ulangi.equalsIgnoreCase("n")) {
+            System.exit(0);
+        }
+        }
         }
         else 
         {
@@ -235,6 +245,11 @@ public void ubahPenghuni() throws IOException
         System.out.println("**************************************");
         System.out.println("\tHapus Data Penghuni\t");
         System.out.println("**************************************");
+               
+        // ambil input dari user
+        System.out.print("Nomor Kamar yang mau dihapus =  ");
+      
+        String ip = sc.next().trim();
         
         // Validasi untuk pilihan hapus data penghuni
         System.out.print("Apakah anda yakin ingin menghapus (y/n)? ");
@@ -248,12 +263,7 @@ public void ubahPenghuni() throws IOException
         String urlValue = "jdbc:mysql://"+host+"/"+db+"?user="+user+"&password="+pwd;
         con = DriverManager.getConnection(urlValue);
         s = con.createStatement();
-        
-        // ambil input dari user
-        System.out.print("Nomor Kamar yang mau dihapus =  ");
-      
-        String ip = sc.next().trim();
-        
+ 
         // buat query hapus
         String sql = String.format("DELETE FROM t_penghuni WHERE no_kamar='%s'",ip);
        

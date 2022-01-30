@@ -184,7 +184,6 @@ public void ubahTransaksi() throws IOException
         String sql = "SELECT * FROM t_transaksi WHERE no_kamar='%s'";
         sql = String.format(sql, ip_baru);
         
-            
         //Eksekusi Query
         rs = s.executeQuery(sql);
         if (rs.next()) 
@@ -209,6 +208,12 @@ public void ubahTransaksi() throws IOException
         System.out.println("Harga Bulan\t= "+hbulan);
         System.out.println("Total\t\t= "+tot);
         
+        // Validasi untuk pilihan ubah data penghuni
+        System.out.print("Apakah anda yakin ingin mengubah (y/n)? ");
+       String ulangi = sc.next();
+        if(ulangi.equals("y")) 
+        {
+       
         //Memasukkan data sewa yang diubah
         System.out.println("**************************************");
         System.out.println("\tMasukkan Transaksi baru\t");
@@ -229,6 +234,11 @@ public void ubahTransaksi() throws IOException
         //Eksekusi Query Update
         s.execute(sqlbaru);
         System.out.println("Ubah Transaksi Berhasil");
+        
+        if(ulangi.equalsIgnoreCase("n")){
+            System.exit(0);
+        }
+        }
         }
         else
         {
@@ -386,6 +396,11 @@ public void ubahTransaksi() throws IOException
         System.out.println("**************************************");
         System.out.println("\tHapus Data Transaksi\t");
         System.out.println("**************************************");
+       
+         // ambil input dari user
+        System.out.print("Nomor Kamar yang mau dihapus =  ");
+      
+        String ip = sc.next().trim();
         
         // Validasi untuk pilihan hapus data transaksi
        System.out.print("Apakah anda yakin ingin menghapus (y/n)? ");
@@ -400,11 +415,6 @@ public void ubahTransaksi() throws IOException
         con = DriverManager.getConnection(urlValue);
         s = con.createStatement();
               
-        // ambil input dari user
-        System.out.print("Nomor Kamar yang mau dihapus =  ");
-      
-        String ip = sc.next().trim();
-        
         // buat query hapus
         String sql = String.format("DELETE FROM t_transaksi WHERE no_kamar='%s'",ip);
        
