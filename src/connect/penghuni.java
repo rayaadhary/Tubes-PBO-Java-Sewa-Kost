@@ -198,12 +198,12 @@ public void ubahPenghuni() throws IOException
         System.out.println("\tMasukkan Data Penghuni baru\t");
         System.out.println("**************************************");
         System.out.print("Nama Penghuni  = ");
-        String namap_baru = sc.next();
+        String namap_baru = br.readLine();
         System.out.print("Nomor Handphone  = ");
         String nohp_baru = sc.next();
         
         System.out.print("Profesi  = ");
-        String pro_baru = sc.next();
+        String pro_baru = br.readLine();
         
         //Query sql update
         String sqlbaru = "UPDATE t_penghuni SET nama_penghuni ='%s', telp_penghuni ='%s', profesi='%s' WHERE no_kamar='%s'";
