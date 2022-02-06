@@ -32,7 +32,7 @@ public class penghuni {
 public void tambahPenghuni() throws IOException, SQLException, ClassNotFoundException{        
         try {
             //Koneksi
-        Class.forName("com.mysql.cj.jdbc.Driver");
+        Class.forName("com.mysql.jdbc.Driver");
         String urlValue = "jdbc:mysql://"+host+"/"+db+"?user="+user+"&password="+pwd;
         con = DriverManager.getConnection(urlValue);
         s = con.createStatement();
@@ -55,6 +55,7 @@ public void tambahPenghuni() throws IOException, SQLException, ClassNotFoundExce
             // input dari user  
             System.out.print("Masukan Kode Kamar = ");
             int ip = sc.nextInt();
+            
             
             if (ip > 0 && ip < 31){
                 this.ip = ip;
@@ -107,7 +108,7 @@ public void tampilPenghuni() throws ClassNotFoundException, SQLException {
        
     try {
         //Koneksi
-        Class.forName("com.mysql.cj.jdbc.Driver");
+        Class.forName("com.mysql.jdbc.Driver");
         String urlValue = "jdbc:mysql://"+host+"/"+db+"?user="+user+"&password="+pwd;
         con = DriverManager.getConnection(urlValue);
         s = con.createStatement();
@@ -154,7 +155,7 @@ public void ubahPenghuni() throws IOException
     {
         try{
         //Koneksi
-        Class.forName("com.mysql.cj.jdbc.Driver");
+        Class.forName("com.mysql.jdbc.Driver");
         String urlValue = "jdbc:mysql://"+host+"/"+db+"?user="+user+"&password="+pwd;
         con = DriverManager.getConnection(urlValue);
         s = con.createStatement();
@@ -259,7 +260,7 @@ public void ubahPenghuni() throws IOException
         try 
         {
         //koneksi
-        Class.forName("com.mysql.cj.jdbc.Driver");
+        Class.forName("com.mysql.jdbc.Driver");
         String urlValue = "jdbc:mysql://"+host+"/"+db+"?user="+user+"&password="+pwd;
         con = DriverManager.getConnection(urlValue);
         s = con.createStatement();
@@ -305,7 +306,7 @@ public void ubahPenghuni() throws IOException
         
         try{
         //Koneksi
-        Class.forName("com.mysql.cj.jdbc.Driver");
+        Class.forName("com.mysql.jdbc.Driver");
         String urlValue = "jdbc:mysql://"+host+"/"+db+"?user="+user+"&password="+pwd;
         con = DriverManager.getConnection(urlValue);
         s = con.createStatement();
@@ -363,7 +364,7 @@ public void ubahPenghuni() throws IOException
     {
         try{
         //Koneksi
-        Class.forName("com.mysql.cj.jdbc.Driver");
+        Class.forName("com.mysql.jdbc.Driver");
         String urlValue = "jdbc:mysql://"+host+"/"+db+"?user="+user+"&password="+pwd;
         con = DriverManager.getConnection(urlValue);
         s = con.createStatement();

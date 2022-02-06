@@ -31,7 +31,7 @@ public class kamar {
     {
         try {
          //Koneksi
-        Class.forName("com.mysql.cj.jdbc.Driver");
+        Class.forName("com.mysql.jdbc.Driver");
         String urlValue = "jdbc:mysql://"+host+"/"+db+"?user="+user+"&password="+pwd;
         con = DriverManager.getConnection(urlValue);
         s = con.createStatement();
@@ -80,7 +80,7 @@ public void tampilKamar() throws ClassNotFoundException, SQLException {
        
     try {
         //Koneksi
-        Class.forName("com.mysql.cj.jdbc.Driver");
+        Class.forName("com.mysql.jdbc.Driver");
         String urlValue = "jdbc:mysql://"+host+"/"+db+"?user="+user+"&password="+pwd;
         con = DriverManager.getConnection(urlValue);
         s = con.createStatement();

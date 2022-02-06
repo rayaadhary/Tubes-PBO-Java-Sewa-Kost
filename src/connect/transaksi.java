@@ -29,7 +29,7 @@ public class transaksi {
     {
         try{
         //Koneksi
-        Class.forName("com.mysql.cj.jdbc.Driver");
+        Class.forName("com.mysql.jdbc.Driver");
         String urlValue = "jdbc:mysql://"+host+"/"+db+"?user="+user+"&password="+pwd;
         con  = DriverManager.getConnection(urlValue);
         s = con.createStatement();
@@ -114,7 +114,7 @@ public class transaksi {
        
     try {
         //Koneksi
-        Class.forName("com.mysql.cj.jdbc.Driver");
+        Class.forName("com.mysql.jdbc.Driver");
         String urlValue = "jdbc:mysql://"+host+"/"+db+"?user="+user+"&password="+pwd;
         con = DriverManager.getConnection(urlValue);
         s = con.createStatement();
@@ -167,7 +167,7 @@ public void ubahTransaksi() throws IOException
     {
         try{
         //Koneksi
-        Class.forName("com.mysql.cj.jdbc.Driver");
+        Class.forName("com.mysql.jdbc.Driver");
         String urlValue = "jdbc:mysql://"+host+"/"+db+"?user="+user+"&password="+pwd;
         con = DriverManager.getConnection(urlValue);
         s = con.createStatement();
@@ -267,7 +267,7 @@ public void ubahTransaksi() throws IOException
         
         try{
         //Koneksi
-        Class.forName("com.mysql.cj.jdbc.Driver");
+        Class.forName("com.mysql.jdbc.Driver");
         String urlValue = "jdbc:mysql://"+host+"/"+db+"?user="+user+"&password="+pwd;
         con = DriverManager.getConnection(urlValue);
         s = con.createStatement();
@@ -332,7 +332,7 @@ public void ubahTransaksi() throws IOException
     {
         try{
         //Koneksi
-        Class.forName("com.mysql.cj.jdbc.Driver");
+        Class.forName("com.mysql.jdbc.Driver");
         String urlValue = "jdbc:mysql://"+host+"/"+db+"?user="+user+"&password="+pwd;
         con = DriverManager.getConnection(urlValue);
         s = con.createStatement();
@@ -410,7 +410,7 @@ public void ubahTransaksi() throws IOException
         try 
         {
         //koneksi
-        Class.forName("com.mysql.cj.jdbc.Driver");
+        Class.forName("com.mysql.jdbc.Driver");
         String urlValue = "jdbc:mysql://"+host+"/"+db+"?user="+user+"&password="+pwd;
         con = DriverManager.getConnection(urlValue);
         s = con.createStatement();
